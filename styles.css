@@ -157,7 +157,6 @@ hr {
   margin: 40px 0;
 }
 
-/* Section mobile-friendly */
 @media (max-width: 768px) {
   /* Réduire la taille des titres pour qu'ils tiennent bien sur l'écran */
   .main-title {
@@ -168,47 +167,41 @@ hr {
     font-size: 1.2rem;
   }
 
-  /* Adapter la sidebar pour prendre 100% de la largeur et devenir un menu mobile */
+  /* La sidebar prend toute la largeur mais reste sous le logo et plus à gauche */
   .sidebar {
-    width: 100%; /* La sidebar prend la largeur totale */
+    width: 100%; /* Sidebar occupe toute la largeur */
     height: auto;
     position: relative;
     box-shadow: none;
     margin-top: 10px; /* Réduit l'espace en haut */
-    padding: 15px;
-    overflow-x: hidden; /* Empêche tout débordement horizontal */
+    padding: 10px 15px;
+    text-align: left; /* Aligner à gauche */
   }
 
-  /* Les éléments internes de la sidebar doivent être bien lisibles */
+  /* La table des matières sous le logo, avec des mots plus petits et plus à gauche */
   .sidebar ul {
     padding: 0;
-    margin: 0;
+    margin: 0; /* Enlever les marges */
     list-style-type: none;
   }
 
   .sidebar li {
-    margin: 10px 0;
-    word-wrap: break-word; /* Casse les mots longs pour éviter les débordements */
+    margin: 10px 0; /* Augmenter un peu l'espacement entre les éléments */
   }
 
   .sidebar a {
-    font-size: 0.9rem;
-    padding: 10px 0;
-    display: block; /* Les liens prennent la largeur totale */
-    text-align: left; /* Alignement optimal pour la lisibilité */
-    word-wrap: break-word; /* Empêche les débordements de texte */
-    overflow-wrap: break-word; /* Option supplémentaire pour une meilleure compatibilité */
+    font-size: 0.8rem; /* Mots plus petits */
+    padding: 8px 10px; /* Un peu plus d'espace autour des mots */
+    display: block; /* Chaque lien prend une ligne entière */
+    color: #b0b0b0;
+    text-decoration: none;
   }
 
-  /* Centrer le contenu pour éviter tout chevauchement */
-  .content {
-    margin-left: 0;
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
+  .sidebar a:hover {
+    color: var(--primary-accent); /* Changer la couleur au survol */
   }
 
-  /* Adapter le header pour qu'il prenne la largeur totale */
+  /* Centrer le contenu du header et ajuster l'espace autour */
   .header-container {
     position: relative;
     top: 0;
@@ -216,23 +209,31 @@ hr {
     width: 100%;
     padding: 10px;
     display: flex;
-    flex-wrap: wrap; /* Les enfants se placent en colonne sur mobile */
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    text-align: center;
   }
 
   .server-logo {
-    margin-bottom: 10px; /* Ajoute un espace sous le logo */
+    margin-bottom: 10px; /* Un peu d'espace sous le logo */
   }
 
   .server-name {
     font-size: 1.2rem;
   }
 
-  /* Amélioration du style des blocs de texte */
+  /* Adapter le contenu principal */
+  .content {
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Adapter les blocs de texte */
   .rule-block {
     padding: 15px;
-    width: 100%; /* Les blocs prennent toute la largeur disponible */
-    max-width: none; /* Supprime la limite de largeur pour s'adapter à l'écran */
+    width: 100%;
+    max-width: none;
   }
 }
