@@ -158,50 +158,12 @@ hr {
 }
 
 @media (max-width: 768px) {
-  /* Réduire la taille des titres pour qu'ils tiennent bien sur l'écran */
-  .main-title {
-    font-size: 1.8rem;
+  /* On passe le body en mode colonne pour que les éléments s'empilent verticalement */
+  body {
+    flex-direction: column;
   }
 
-  .section-title {
-    font-size: 1.2rem;
-  }
-
-  /* La sidebar prend toute la largeur mais reste sous le logo et plus à gauche */
-  .sidebar {
-    width: 100%; /* Sidebar occupe toute la largeur */
-    height: auto;
-    position: relative;
-    box-shadow: none;
-    margin-top: 10px; /* Réduit l'espace en haut */
-    padding: 10px 15px;
-    text-align: left; /* Aligner à gauche */
-  }
-
-  /* La table des matières sous le logo, avec des mots plus petits et plus à gauche */
-  .sidebar ul {
-    padding: 0;
-    margin: 0; /* Enlever les marges */
-    list-style-type: none;
-  }
-
-  .sidebar li {
-    margin: 10px 0; /* Augmenter un peu l'espacement entre les éléments */
-  }
-
-  .sidebar a {
-    font-size: 0.8rem; /* Mots plus petits */
-    padding: 8px 10px; /* Un peu plus d'espace autour des mots */
-    display: block; /* Chaque lien prend une ligne entière */
-    color: #b0b0b0;
-    text-decoration: none;
-  }
-
-  .sidebar a:hover {
-    color: var(--primary-accent); /* Changer la couleur au survol */
-  }
-
-  /* Centrer le contenu du header et ajuster l'espace autour */
+  /* Le header occupe toute la largeur et ses éléments sont centrés verticalement */
   .header-container {
     position: relative;
     top: 0;
@@ -215,14 +177,58 @@ hr {
   }
 
   .server-logo {
-    margin-bottom: 10px; /* Un peu d'espace sous le logo */
+    margin-bottom: 10px;
   }
 
   .server-name {
     font-size: 1.2rem;
   }
 
-  /* Adapter le contenu principal */
+  /* La sidebar devient un conteneur full-width sous le header */
+  .sidebar {
+    width: 100%;          /* Prend toute la largeur de l'écran */
+    height: auto;         /* La hauteur s'adapte au contenu */
+    position: relative;   /* Plus de positionnement fixe */
+    margin-top: 10px;      /* Espace réduit en haut */
+    padding: 10px 15px;    /* Padding modéré */
+    text-align: left;      /* Contenu aligné à gauche */
+    overflow-x: hidden;    /* Empêche le défilement horizontal */
+  }
+
+  /* La liste dans la sidebar ne doit pas avoir de marges parasites */
+  .sidebar ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  /* Chaque élément de la liste occupe toute la largeur et se renvoie à la ligne si besoin */
+  .sidebar li {
+    margin: 10px 0;       /* Espacement vertical entre les éléments */
+    width: 100%;
+  }
+
+  /* Les liens de la table des matières :
+     - Texte plus petit (0.8rem)
+     - S'affichent en bloc sur toute la largeur
+     - Se renvoient à la ligne si le mot est trop long */
+  .sidebar a {
+    font-size: 0.8rem;
+    padding: 8px 10px;
+    display: block;
+    white-space: normal;         /* Permet le retour à la ligne */
+    word-wrap: break-word;       /* Découpe les mots trop longs */
+    overflow-wrap: break-word;   /* Pour une meilleure compatibilité */
+    text-align: left;
+    color: #b0b0b0;
+    text-decoration: none;
+  }
+
+  .sidebar a:hover {
+    color: var(--primary-accent);
+  }
+
+  /* Le contenu principal occupe toute la largeur en dessous de la sidebar */
   .content {
     margin-left: 0;
     padding: 20px;
@@ -230,10 +236,11 @@ hr {
     box-sizing: border-box;
   }
 
-  /* Adapter les blocs de texte */
+  /* Les blocs de texte s'adaptent également */
   .rule-block {
     padding: 15px;
     width: 100%;
     max-width: none;
   }
 }
+
