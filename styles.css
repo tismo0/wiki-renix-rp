@@ -10,12 +10,43 @@ body {
   min-height: 100vh;
 }
 
+.header-container {
+  position: fixed;
+  top: 0; /* Met le header tout en haut */
+  left: 0;
+  width: 100%; /* Prend toute la largeur disponible */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ajuste pour que le logo et le nom soient alignés à gauche */
+  background-color: #444;
+  border-radius: 0 0 15px 15px; /* Ajoute une bordure arrondie uniquement en bas */
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.server-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.server-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .sidebar {
+  margin-top: 80px; /* Ajoute un espace pour éviter le chevauchement avec le header */
   width: 250px;
   background-color: #333;
   padding: 20px;
   position: fixed;
-  height: 100vh;
+  height: calc(100vh - 80px); /* Ajuste la hauteur pour éviter le chevauchement */
   overflow-y: auto;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
 }
@@ -130,5 +161,12 @@ hr {
     height: auto;
     position: relative;
     box-shadow: none;
+  }
+
+  .header-container {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
   }
 }
