@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="frederic.css">
+</head>
+<body>
+  <div class="header-container">
+    <img src="server-logo.png" alt="Logo" class="server-logo">
+    <div class="server-name">Contact Dev</div>
+  </div>
+
+  <div class="contact-form">
+    <h2>Contactez-nous</h2>
+    <form action="/submit-form" method="POST">
+      <input type="text" name="name" placeholder="Votre nom" required>
+      <input type="email" name="email" placeholder="Votre email" required>
+      <textarea name="message" rows="6" placeholder="Votre message" required></textarea>
+      <button type="submit">Envoyer le message</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Contact Dev | <a href="mailto:contact@dev.com">contact@dev.com</a></p>
+  </footer>
+</body>
+</html>
