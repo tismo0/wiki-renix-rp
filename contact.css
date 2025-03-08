@@ -409,4 +409,23 @@ section.projects {
     font-size: 3rem;
   }
 
+.img-project {
+    width: 300px;
+    height: 130px;
+    background-color: var(--dark);
+    margin-bottom: 23px;
+    border: 1px solid var(--gray-200);
+    overflow: hidden; /* Cache les parties débordantes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-project img {
+    width: 100%; /* S'assure que l'image prend toute la largeur */
+    height: 100%; /* S'assure que l'image prend toute la hauteur */
+    object-fit: cover; /* Coupe et ajuste l'image pour remplir le cadre */
+}
+
+
 }
