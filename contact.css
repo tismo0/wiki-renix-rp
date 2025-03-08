@@ -409,8 +409,4 @@ section.projects {
     font-size: 3rem;
   }
 
-html {
-  scroll-behavior: smooth;
-}
-
 }
