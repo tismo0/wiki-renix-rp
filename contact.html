@@ -7,6 +7,13 @@
   <title>Mon Portfolio</title>
   <link rel="stylesheet" href="contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+  <style>
+    /* Ajout du défilement fluide en CSS */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <div id="top"></div>
@@ -29,7 +36,7 @@
         <h2>Développeur Frontend :)</h2>
         <div class="btn">
           <button class="cv">
-            <a id="pdf" href="https://anaskhan28.github.io/resume/" target="_fblank">Télécharger mon CV</a>
+            <a id="pdf" href="https://anaskhan28.github.io/resume/" target="_blank">Télécharger mon CV</a>
           </button>
           <button class="contact">
             <a href="#contacts">Me contacter</a>
@@ -45,10 +52,7 @@
       <p>
         Je suis étudiant au Government Polytechnic de Mumbai et prépare un diplôme en Génie Informatique.<br>
         Je suis polyvalent dans l'apprentissage et l'expérimentation de différents domaines.<br>
-        J'ai un vif intérêt pour la finance et j'explore actuellement le marché boursier ainsi que le monde des cryptomonnaies.<br>
-        J'aime concevoir et développer des produits qui impactent positivement la vie des utilisateurs.<br>
-        Je ne me limite pas à des outils ou technologies spécifiques, ceux-ci ne sont que des moyens de création.<br>
-        Cette approche m'aide à apprendre rapidement et à me concentrer sur la résolution des problèmes.
+        J'aime concevoir et développer des produits qui impactent positivement la vie des utilisateurs.
       </p>
     </section>
     <section class="contacts" id="contacts">
@@ -68,24 +72,6 @@
         </span>
         <span class="description">anasskhan28@gmail.com</span>
       </div>
-      <div class="contact">
-        <div class="icon">
-          <i class="fab fa-instagram"></i>
-        </div>
-        <span class="title">
-          <a href="https://instagram.com/anaskhan.28" target="_fblank">Instagram</a>
-        </span>
-        <span class="description">@anaskhan28</span>
-      </div>
-      <div class="contact">
-        <div class="icon">
-          <i class="fab fa-twitter"></i>
-        </div>
-        <span class="title">
-          <a href="https://twitter.com/anaskhan_28" target="_fblank">Twitter</a>
-        </span>
-        <span class="description">@anaskhan_28</span>
-      </div>
     </section>
     <section class="projects">
       <h2 id="projects" class="target">Projets</h2>
@@ -93,24 +79,6 @@
         <div class="card">
           <div class="img-project">
             <img src="https://picsum.photos/300/130?random=1" alt="">
-          </div>
-          <div class="description-project">
-            <span class="title-project">Bientôt en ligne</span>
-            <span class="tag-project">Technologies : HTML5, CSS, JS</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-project">
-            <img src="https://picsum.photos/300/130?random=2" alt="">
-          </div>
-          <div class="description-project">
-            <span class="title-project">Bientôt en ligne</span>
-            <span class="tag-project">Technologies : HTML5, CSS, JS</span>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img-project">
-            <img src="https://picsum.photos/300/130?random=3" alt="">
           </div>
           <div class="description-project">
             <span class="title-project">Bientôt en ligne</span>
@@ -125,9 +93,6 @@
         <div class="card-skill"><i class="fab fa-html5"></i></div>
         <div class="card-skill"><i class="fab fa-css3-alt"></i></div>
         <div class="card-skill"><i class="fab fa-js"></i></div>
-        <div class="card-skill"><i class="fab fa-java"></i></div>
-        <div class="card-skill"><i class="fab fa-python"></i></div>
-        <div class="card-skill"><i class="fab fa-figma"></i></div>
       </div>
     </section>
   </div>
@@ -142,5 +107,24 @@
   <div class="goto-top">
     <a href="#top"><i class="fas fa-arrow-up"></i></a>
   </div>
+
+  <!-- Ajout du JavaScript pour un défilement fluide amélioré -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 50, // Ajuste la position pour éviter que le header cache le début
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
